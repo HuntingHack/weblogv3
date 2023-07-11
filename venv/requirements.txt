@@ -1,2 +1,2 @@
-pip install statsmodels
-pip install streamlit
+statsmodels
+streamlit
