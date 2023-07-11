@@ -11,7 +11,7 @@ import plotly.express as px
 
 # Code for website design
 
-st.header('Web Log Analysis App')
+st.title('Web Log Analysis App')
 st.subheader('By Siddharth Madhavan')
 
 if(st.button("About")):
