@@ -14,6 +14,9 @@ import plotly.express as px
 st.header('Web Log Analysis with Prediction')
 st.subheader('By Siddharth Madhavan')
 
+if(st.button("About")):
+    st.text("This is a small project using the ARIMA model to predict future values for a given website based on its web log dataset. You are currently running V3.01.")
+
 # starting off with an input given by the user
 
 uploaded_file = st.file_uploader("Upload your file here...")
