@@ -1,3 +1,4 @@
 statsmodels
 streamlit
 scikit-metrics
+matplotlib
