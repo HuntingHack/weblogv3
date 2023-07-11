@@ -46,9 +46,6 @@ st.plotly_chart(fig)
 aggregated_data = log_data.groupby('Date').agg({'IP': 'count'}).reset_index()
 aggregated_data.columns = ['Date', 'request_count']
 
-st.subheader('Aggregated Data:')
-st.write(aggregated_data.head())
-
 aggregated_data.set_index('Date', inplace=True)
 target_variable = aggregated_data['request_count']
 
