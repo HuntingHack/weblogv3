@@ -14,9 +14,7 @@ import plotly.express as px
 st.title('Web Log Analysis App')
 st.subheader('By Siddharth Madhavan')
 
-if(st.button("About")):
-    st.markdown("This is a small project using the ARIMA model to predict future values for a given website based on its web log dataset. You are currently running V3.01.")
-
+st.write('The Web Log Analysis App is a powerful tool designed to analyze and gain insights from web server logs. It provides valuable information about website traffic, user behavior, errors, and performance. With this app, you can make data-driven decisions to optimize your website, improve user experience, and enhance security.')
 # starting off with an input given by the user
 
 uploaded_file = st.file_uploader("Upload your file here...")
