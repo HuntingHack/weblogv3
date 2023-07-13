@@ -16,10 +16,12 @@ st.subheader('By Siddharth Madhavan')
 
 st.write('The Web Log Analysis App is a powerful tool designed to analyze and gain insights from web server logs. It provides valuable information about website traffic, user behavior, errors, and performance. With this app, you can make data-driven decisions to optimize your website, improve user experience, and enhance security.')
 # starting off with an input given by the user
+try:
+  uploaded_file = st.file_uploader("Upload your file here...")
 
-uploaded_file = st.file_uploader("Upload your file here...")
-
-log_data = pd.read_csv(uploaded_file)
+  log_data = pd.read_csv(uploaded_file)
+except Exception:
+ pass
 
 st.write(log_data)
 
