@@ -20,7 +20,7 @@ try:
   uploaded_file = st.file_uploader("Upload your file here...")
 
   log_data = pd.read_csv(uploaded_file)
-except Exception:
+except Exception(log_data):
  pass
 
 st.write(log_data)
