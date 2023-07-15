@@ -120,22 +120,15 @@ test_data = differenced_data[-30:]  # Use the last 30 data points for testing
 order = (0, 0, 1)
 model = ARIMA(train_data, order=order)
 model_fit = model.fit()
-# Step 8: Evaluate the Model
-predictions = model_fit.forecast(steps=len(test_data))
-mse = mean_squared_error(test_data, predictions)
-rmse = np.sqrt(mse)
-mae = mean_absolute_error(test_data, predictions)
-print(f"RMSE: {rmse:.2f}")
-print(f"MAE: {mae:.2f}")
 
-# Step 9: Forecast with the Model
+# Forecast with the Model
 
 inpu2 = st.text_input("Enter the required number of predictions:")
 
 if st.button('Submit'):
  pred_no = inpu2.title()
 
-future_predictions = model_fit.forecast(steps=int(pred_no))  # Example: Generate 10 future predictions
+future_predictions = model_fit.forecast(steps=int(pred_no))
 st.subheader('Predictions:')
 st.success(future_predictions)
 
