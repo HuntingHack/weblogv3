@@ -46,6 +46,35 @@ st.subheader('Data Visualization:')
 fig = px.line(page_views, title='Page Views')
 st.plotly_chart(fig)
 
+# Perform analysis based on available columns
+unique_ips = log_data['IP'].nunique()  # Count the number of unique IP addresses
+unique_urls = log_data['URL'].nunique()  # Count the number of unique URLs
+status_counts = log_data['Staus'].value_counts()  # Count the occurrences of each status code
+
+st.header('Website Information:')
+
+# Print the results
+st.subheader("Analysis Results:")
+st.text("Unique IP Addresses:")
+st.text(unique_ips)
+st.text("Unique URLs:")
+st.text(unique_urls)
+st.text("Status Code Counts:")
+st.text(status_counts)
+
+# Perform exploratory analysis
+total_requests = len(log_data)  # Total number of requests
+unique_visitors = log_data['IP'].nunique()  # Number of unique IP addresses
+
+
+st.subheader("Exploratory Analysis Results:")
+st.text("Total Requests:")
+st.text(total_requests)
+st.text("Unique Visitors:")
+st.text(unique_visitors)
+st.text("Page Views:")
+st.text(page_views.head(20))
+
 aggregated_data = log_data.groupby('Date').agg({'IP': 'count'}).reset_index()
 aggregated_data.columns = ['Date', 'request_count']
 
@@ -137,31 +166,4 @@ fig.update_layout(
 st.plotly_chart(fig)
 
 
-# Perform analysis based on available columns
-unique_ips = log_data['IP'].nunique()  # Count the number of unique IP addresses
-unique_urls = log_data['URL'].nunique()  # Count the number of unique URLs
-status_counts = log_data['Staus'].value_counts()  # Count the occurrences of each status code
 
-st.header('Additional Information:')
-
-# Print the results
-st.subheader("Analysis Results:")
-st.text("Unique IP Addresses:")
-st.text(unique_ips)
-st.text("Unique URLs:")
-st.text(unique_urls)
-st.text("Status Code Counts:")
-st.text(status_counts)
-
-# Perform exploratory analysis
-total_requests = len(log_data)  # Total number of requests
-unique_visitors = log_data['IP'].nunique()  # Number of unique IP addresses
-
-
-st.subheader("Exploratory Analysis Results:")
-st.text("Total Requests:")
-st.text(total_requests)
-st.text("Unique Visitors:")
-st.text(unique_visitors)
-st.text("Page Views:")
-st.text(page_views.head(20))
