@@ -116,8 +116,7 @@ test_data = differenced_data[-30:]  # Use the last 30 data points for testing
 # Step 6: Fit the ARIMA Model
 
 
-order = (2, 3, 1)  # Example order, replace with the appropriate values
-model = ARIMA(train_data, order=order)
+order = (0, 0, 1)
 model_fit = model.fit()
 # Step 8: Evaluate the Model
 predictions = model_fit.forecast(steps=len(test_data))
