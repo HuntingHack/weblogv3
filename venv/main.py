@@ -141,7 +141,7 @@ st.subheader('Predictions:')
 
 st.write("Model Accuracy")
 st.write(f"RMSE: {rmse:.2f}")
-st.write(f"MAE: {mae:.2f}"))
+st.write(f"MAE: {mae:.2f}")
 
 st.success(future_predictions)
 
