@@ -138,6 +138,11 @@ if st.button('Submit'):
 
 future_predictions = model_fit.forecast(steps=int(pred_no))  # Example: Generate 10 future predictions
 st.subheader('Predictions:')
+
+st.write("Model Accuracy")
+st.write(f"RMSE: {rmse:.2f}")
+st.write(f"MAE: {mae:.2f}"))
+
 st.success(future_predictions)
 
 # Step 5: Create a Line Plot with Forecasted Predictions
