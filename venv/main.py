@@ -59,6 +59,35 @@ if uploaded_file is not None:
     plt.title('Web Log Data')
     plt.show()
 
+    # Perform analysis based on available columns
+    unique_ips = log_data['IP'].nunique()  # Count the number of unique IP addresses
+    unique_urls = log_data['URL'].nunique()  # Count the number of unique URLs
+    status_counts = log_data['Staus'].value_counts()  # Count the occurrences of each status code
+
+    st.header('Additional Information:')
+
+    # Print the results
+    st.subheader("Analysis Results:")
+    st.text("Unique IP Addresses:")
+    st.text(unique_ips)
+    st.text("Unique URLs:")
+    st.text(unique_urls)
+    st.text("Status Code Counts:")
+    st.text(status_counts)
+
+    # Perform exploratory analysis
+    total_requests = len(log_data)  # Total number of requests
+    unique_visitors = log_data['IP'].nunique()  # Number of unique IP addresses
+
+
+    st.subheader("Exploratory Analysis Results:")
+    st.text("Total Requests:")
+    st.text(total_requests)
+    st.text("Unique Visitors:")
+    st.text(unique_visitors)
+    st.text("Page Views:")
+    st.text(page_views.head(20))
+
     # Step 3: Make the Time Series Stationary
     # Apply differencing to remove trend and seasonality
     differenced_data = target_variable.diff().dropna()
@@ -138,33 +167,6 @@ if uploaded_file is not None:
         st.plotly_chart(fig)
 
 
-    # Perform analysis based on available columns
-    unique_ips = log_data['IP'].nunique()  # Count the number of unique IP addresses
-    unique_urls = log_data['URL'].nunique()  # Count the number of unique URLs
-    status_counts = log_data['Staus'].value_counts()  # Count the occurrences of each status code
 
-    st.header('Additional Information:')
-
-    # Print the results
-    st.subheader("Analysis Results:")
-    st.text("Unique IP Addresses:")
-    st.text(unique_ips)
-    st.text("Unique URLs:")
-    st.text(unique_urls)
-    st.text("Status Code Counts:")
-    st.text(status_counts)
-
-    # Perform exploratory analysis
-    total_requests = len(log_data)  # Total number of requests
-    unique_visitors = log_data['IP'].nunique()  # Number of unique IP addresses
-
-
-    st.subheader("Exploratory Analysis Results:")
-    st.text("Total Requests:")
-    st.text(total_requests)
-    st.text("Unique Visitors:")
-    st.text(unique_visitors)
-    st.text("Page Views:")
-    st.text(page_views.head(20))
 else:
     st.warning('Please upload a file to proceed.')
