@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 import time
 
-emp = st.container()
+emp = st.empty()
     
 # Code for website design
 
