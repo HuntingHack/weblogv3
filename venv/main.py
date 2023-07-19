@@ -20,7 +20,9 @@ if st.button('Privacy Policy'):
     st.write('[Link](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
 
 if (option == 'Agree'):
-  option = st.radio(disabled = True)
+  option = st.radio(
+    'Please agree to our T&Cs to continue:',
+    ('Agree', 'Disagree'), disabled = True)
   st.title('Web Log Analysis App')
   st.subheader('By Siddharth Madhavan')
 
