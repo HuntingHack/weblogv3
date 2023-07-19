@@ -11,9 +11,9 @@ import plotly.express as px
 
 # Code for website design
 
-st.dialog('T&Cs', close_on_submit=True, clear_on_close=True, clear_on_submit=False, dismissible=True, key=None)
-
-
+option = st.radio("Please agree to our T&Cs to continue:", ('Agree', 'Disagree'))
+if st.button('Say hello'):
+    st.write('T&Cs [Link](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
 st.title('Web Log Analysis App')
 st.subheader('By Siddharth Madhavan')
 
