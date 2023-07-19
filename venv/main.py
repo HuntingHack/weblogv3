@@ -14,7 +14,7 @@ emp = st.container()
     
 # Code for website design
 
-with emp.container():
+with emp.form():
   option = st.radio('Please agree to our T&Cs to continue:', ('Agree', 'Disagree'))
   if st.button('Terms & Conditions'):
       st.write('[Link](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
