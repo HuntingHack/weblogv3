@@ -23,7 +23,7 @@ if (button1 == 'Agree'):
   st.title('Web Log Analysis App')
   st.subheader('By Siddharth Madhavan')
 
-  st.title('About App')
+  st.header('About App')
 
   st.write('The Web Log Analysis App is a powerful tool designed to analyze and gain insights from web server logs. It provides valuable information about website traffic, user behavior, errors, and performance. With this app, you can make data-driven decisions to optimize your website, improve user experience, and enhance security.')
 
@@ -52,7 +52,7 @@ if (button1 == 'Agree'):
 
       # Data Visualization
 
-      st.subheader('Data Visualization:')
+      st.header('Data Visualization:')
       fig = px.line(page_views, title='Page Views')
       st.plotly_chart(fig)
 
