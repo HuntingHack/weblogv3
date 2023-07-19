@@ -17,8 +17,9 @@ with emp.form('Disclaimer'):
   st.subheader('Disclaimer')
   st.write('[T&Cs](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
   st.write('[Privacy Policy](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
-  if st.form_submit_button("Agree"):
-    st.empty()
+  button1 = st.form_submit_button("Agree")
+  if button1:
+    emp.empty()
     st.title('Web Log Analysis App')
     st.subheader('By Siddharth Madhavan')
 
