@@ -12,12 +12,13 @@ import plotly.express as px
 emp = st.empty()
     
 # Code for website design
-option = emp.radio('Please agree to our T&Cs to continue:', ('Agree', 'Disagree'))
 
-if emp.button('Terms & Conditions'):
-    emp.write('[Link](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
-if emp.button('Privacy Policy'):
-    emp.write('[Link](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
+with emp.container():
+  option = st.radio('Please agree to our T&Cs to continue:', ('Agree', 'Disagree'))
+  if st.button('Terms & Conditions'):
+      st.write('[Link](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
+  if emp.button('Privacy Policy'):
+      st.write('[Link](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
 
 if (option == 'Agree'):
 
