@@ -11,7 +11,7 @@ import plotly.express as px
 import time
 
 # Code for website design
-emp = st.form('Disclaimer')
+emp = st.container()
 
 with emp.form('Disclaimer'):
   st.subheader('Disclaimer')
