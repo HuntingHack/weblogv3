@@ -11,6 +11,9 @@ import plotly.express as px
 
 # Code for website design
 
+st.dialog('T&Cs', close_on_submit=True, clear_on_close=True, clear_on_submit=False, dismissible=True, key=None)
+
+
 st.title('Web Log Analysis App')
 st.subheader('By Siddharth Madhavan')
 
