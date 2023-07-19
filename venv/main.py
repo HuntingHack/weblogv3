@@ -12,7 +12,7 @@ import plotly.express as px
 emp = st.empty()
     
 # Code for website design
-option = emp.radio('Please agree to our T&Cs to continue:', ('Agree', 'Disagree'), disabled=st.session_state.disabled, on_change=disable)
+option = emp.radio('Please agree to our T&Cs to continue:', ('Agree', 'Disagree'))
 
 if emp.button('Terms & Conditions'):
     emp.write('[Link](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
