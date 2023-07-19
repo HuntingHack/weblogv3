@@ -10,23 +10,14 @@ import plotly.graph_objects as go
 import plotly.express as px
 import time
 
-formbtn = st.button("Form")
-
-if "formbtn_state" not in st.session_state:
-    st.session_state.formbtn_state = False
-
-if formbtn or st.session_state.formbtn_state:
-    st.session_state.formbtn_state = True
-
 emp = st.empty()
     
 # Code for website design
 
 with emp.form('Disclaimer'):
+  st.subheader('Disclaimer')
   st.write('[T&Cs](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
   st.write('[Privacy Policy](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
-  disagree_button = st.form_submit_button("Disagree")
-
   if st.form_submit_button("Agree"):
 
     emp.empty()
