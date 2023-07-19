@@ -13,13 +13,13 @@ import time
 # Code for website design
 emp = st.container()
 
-with emp.form('Disclaimer'):
+with emp.expander('Disclaimer', expanded = False):
   st.subheader('Disclaimer')
   st.write('[T&Cs](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
   st.write('[Privacy Policy](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
-  button1 = st.form_submit_button("Agree")
+  button1 = st.button("Agree")
   if button1:
-    emp.empty()
+    emp.expander('Disclaimer', expanded = False)
     st.title('Web Log Analysis App')
     st.subheader('By Siddharth Madhavan')
 
