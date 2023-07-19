@@ -9,7 +9,7 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 
-emp = st.empty()
+emp = st.container()
     
 # Code for website design
 
