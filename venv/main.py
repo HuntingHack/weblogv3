@@ -15,11 +15,10 @@ emp = st.empty()
 # Code for website design
 
 with emp.form('Disclaimer'):
+  st.write('[T&Cs](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
+  st.write('[Privacy Policy](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
   agree_button = st.form_submit_button("Agree")
-  if st.button('Terms & Conditions'):
-      st.write('[Link](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
-  if emp.button('Privacy Policy'):
-      st.write('[Link](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
+  disagree_button = st.form_submit_button("Disagree")
 
 if (agree_button == 'Agree'):
 
