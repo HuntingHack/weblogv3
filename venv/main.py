@@ -14,7 +14,7 @@ emp = st.empty()
     
 # Code for website design
 
-with emp.container():
+with emp.empty():
   time.sleep(1)
   option = st.radio('Please agree to our T&Cs to continue:', ('Agree', 'Disagree'))
   if st.button('Terms & Conditions'):
