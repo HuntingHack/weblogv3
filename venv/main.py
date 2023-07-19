@@ -9,14 +9,14 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 
-if "visibility" not in st.session_state:
-    st.session_state.visibility = "visible"
-    st.session_state.disabled = True
+if "disabled" not in st.session_state:
+    st.session_state["disabled"] = False
 
+def disable():
+    st.session_state["disabled"] = True
+    
 # Code for website design
-option = st.radio(
-    'Please agree to our T&Cs to continue:',
-    ('Agree', 'Disagree'))
+option = st.radio('Please agree to our T&Cs to continue:', ('Agree', 'Disagree'), disabled=st.session_state.disabled, on_change=disable)
 
 if st.button('Terms & Conditions'):
     st.write('[Link](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
@@ -24,9 +24,6 @@ if st.button('Privacy Policy'):
     st.write('[Link](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
 
 if (option == 'Agree'):
-  option = st.radio(
-    'Please agree to our T&Cs to continue:',
-    ('Agree', 'Disagree'), key = "visibility", disabled = st.session_state.disabled)
   st.title('Web Log Analysis App')
   st.subheader('By Siddharth Madhavan')
 
