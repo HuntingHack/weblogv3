@@ -26,7 +26,7 @@ if st.button('Privacy Policy'):
 if (option == 'Agree'):
   option = st.radio(
     'Please agree to our T&Cs to continue:',
-    ('Agree', 'Disagree'), key = "visibility", st.session_state.disabled)
+    ('Agree', 'Disagree'), key = "visibility", disabled = st.session_state.disabled)
   st.title('Web Log Analysis App')
   st.subheader('By Siddharth Madhavan')
 
