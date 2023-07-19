@@ -14,14 +14,14 @@ emp = st.empty()
     
 # Code for website design
 
-with emp.form():
-  option = st.radio('Please agree to our T&Cs to continue:', ('Agree', 'Disagree'))
+with emp.form('Disclaimer'):
+  agree_button = st.form_submit_button("Agree")
   if st.button('Terms & Conditions'):
       st.write('[Link](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
   if emp.button('Privacy Policy'):
       st.write('[Link](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
 
-if (option == 'Agree'):
+if (agree_button == 'Agree'):
 
   emp.empty()
   st.title('Web Log Analysis App')
