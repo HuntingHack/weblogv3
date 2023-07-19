@@ -175,7 +175,7 @@ if (option == 'Agree'):
           # Show the plot
           st.plotly_chart(fig)
 else:
-    st.warning('Please agree to use our service!)
+    st.warning('Please agree to use our service!')
           
 
 
