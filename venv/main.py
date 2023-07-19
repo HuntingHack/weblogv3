@@ -9,21 +9,19 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 
-if "disabled" not in st.session_state:
-    st.session_state["disabled"] = False
-
-def disable():
-    st.session_state["disabled"] = True
+emp = st.empty()
     
 # Code for website design
-option = st.radio('Please agree to our T&Cs to continue:', ('Agree', 'Disagree'), disabled=st.session_state.disabled, on_change=disable)
+option = emp.radio('Please agree to our T&Cs to continue:', ('Agree', 'Disagree'), disabled=st.session_state.disabled, on_change=disable)
 
-if st.button('Terms & Conditions'):
-    st.write('[Link](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
-if st.button('Privacy Policy'):
-    st.write('[Link](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
+if emp.button('Terms & Conditions'):
+    emp.write('[Link](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
+if emp.button('Privacy Policy'):
+    emp.write('[Link](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
 
 if (option == 'Agree'):
+
+  emp.empty()
   st.title('Web Log Analysis App')
   st.subheader('By Siddharth Madhavan')
 
