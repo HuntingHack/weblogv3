@@ -11,7 +11,7 @@ import plotly.express as px
 
 if "visibility" not in st.session_state:
     st.session_state.visibility = "visible"
-    st.session_state.disabled = False
+    st.session_state.disabled = True
 
 # Code for website design
 option = st.radio(
@@ -26,7 +26,7 @@ if st.button('Privacy Policy'):
 if (option == 'Agree'):
   option = st.radio(
     'Please agree to our T&Cs to continue:',
-    ('Agree', 'Disagree'), key = "visibility", disabled = True)
+    ('Agree', 'Disagree'), key = "visibility", st.session_state.disabled)
   st.title('Web Log Analysis App')
   st.subheader('By Siddharth Madhavan')
 
