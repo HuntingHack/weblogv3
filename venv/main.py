@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 # Code for website design
-option = st.selectbox(
+option = st.radio(
     'Please agree to our T&Cs to continue:',
     ('Agree', 'Disagree'))
 
@@ -20,6 +20,7 @@ if st.button('Privacy Policy'):
     st.write('[Link](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
 
 if (option == 'Agree'):
+  option = st.radio(disabled = True)
   st.title('Web Log Analysis App')
   st.subheader('By Siddharth Madhavan')
 
