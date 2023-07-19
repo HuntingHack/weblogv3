@@ -10,6 +10,14 @@ import plotly.graph_objects as go
 import plotly.express as px
 import time
 
+formbtn = st.button("Form")
+
+if "formbtn_state" not in st.session_state:
+    st.session_state.formbtn_state = False
+
+if formbtn or st.session_state.formbtn_state:
+    st.session_state.formbtn_state = True
+
 emp = st.empty()
     
 # Code for website design
@@ -20,7 +28,7 @@ with emp.form('Disclaimer'):
   agree_button = st.form_submit_button("Agree")
   disagree_button = st.form_submit_button("Disagree")
 
-if (agree_button == 'Agree'):
+if (agree_button = True):
 
   emp.empty()
   st.title('Web Log Analysis App')
