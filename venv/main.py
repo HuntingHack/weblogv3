@@ -19,7 +19,7 @@ with emp.expander('Disclaimer', expanded = True):
   st.write('[Privacy Policy](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
   button1 = st.radio("Please agree to continue:", ('Agree', 'Disagree')
                      
-if button1 == 'Agree':
+if (button1 == 'Agree'):
   emp.expander('Disclaimer', expanded = False)
   st.title('Web Log Analysis App')
   st.subheader('By Siddharth Madhavan')
