@@ -25,18 +25,17 @@ emp = st.empty()
 with emp.form('Disclaimer'):
   st.write('[T&Cs](https://docs.google.com/document/d/1ej4FDVM_NPhB3BDbsRZ4ygkt738de62WUlap42gy4ZY/edit?usp=sharing)')
   st.write('[Privacy Policy](https://docs.google.com/document/d/1d5BDiJyufvRkGjB0BjwW3PGpdCEUKi2MYFkL4B1UKe0/edit?usp=sharing)')
-  agree_button = st.form_submit_button("Agree")
   disagree_button = st.form_submit_button("Disagree")
 
-if (agree_button = True):
+  if st.form_submit_button("Agree"):
 
-  emp.empty()
-  st.title('Web Log Analysis App')
-  st.subheader('By Siddharth Madhavan')
+    emp.empty()
+    st.title('Web Log Analysis App')
+    st.subheader('By Siddharth Madhavan')
 
-  st.title('About App')
+    st.title('About App')
 
-  st.write('The Web Log Analysis App is a powerful tool designed to analyze and gain insights from web server logs. It provides valuable information about website traffic, user behavior, errors, and performance. With this app, you can make data-driven decisions to optimize your website, improve user experience, and enhance security.')
+    st.write('The Web Log Analysis App is a powerful tool designed to analyze and gain insights from web server logs. It provides valuable information about website traffic, user behavior, errors, and performance. With this app, you can make data-driven decisions to optimize your website, improve user experience, and enhance security.')
 
   # starting off with an input given by the user
   uploaded_file = st.file_uploader("Upload your file here...")
