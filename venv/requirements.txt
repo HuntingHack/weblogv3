@@ -3,4 +3,4 @@ streamlit
 scikit-metrics
 matplotlib
 plotly
-streamlit-survey
+"trubrics[streamlit]"
