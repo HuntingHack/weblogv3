@@ -155,7 +155,7 @@ if (button1 == 'Agree'):
 
         inpu2 = st.text_input("Enter the required number of predictions:")
 
-        if st.button('Submit'):
+        if inpu2:
             pred_no = inpu2.title()
 
             future_predictions = model_fit.forecast(steps=int(pred_no))  # Example: Generate 10 future predictions
