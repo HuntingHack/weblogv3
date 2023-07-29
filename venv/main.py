@@ -194,8 +194,8 @@ if (button1 == 'Agree'):
 
             collector = FeedbackCollector(
                 component_name="Feedback",
-                email=st.secrets["siddharth.madhavan2007@gmail.com"], 
-                password=st.secrets["abc123"], 
+                email=st.secrets["TRUBRICS_EMAIL"], 
+                password=st.secrets["TRUBRICS_PASSWORD"], 
             )
 
             collector.st_feedback(
