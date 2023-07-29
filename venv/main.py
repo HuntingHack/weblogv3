@@ -9,6 +9,7 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 import time
+import trubrics[streamlit] as trubrics
 from trubrics.integrations.st import FeedbackCollector
 
 # Set Streamlit page layout
