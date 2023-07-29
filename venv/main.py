@@ -9,8 +9,7 @@ import streamlit as st
 import plotly.graph_objects as go
 import plotly.express as px
 import time
-import trubrics[streamlit] as trubrics
-from trubrics.integrations.st import FeedbackCollector
+from trubrics.integrations.streamlit import FeedbackCollector
 
 # Set Streamlit page layout
 st.set_page_config(page_title='Web Log Analysis App', layout='wide')
