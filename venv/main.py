@@ -193,7 +193,7 @@ if (button1 == 'Agree'):
             
 
         collector = FeedbackCollector(
-            component_name="Feedback",
+            component_name="feedback",
             email=st.secrets["TRUBRICS_EMAIL"], 
             password=st.secrets["TRUBRICS_PASSWORD"], 
         )
