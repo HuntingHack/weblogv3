@@ -12,7 +12,7 @@ import time
 from trubrics.integrations.streamlit import FeedbackCollector
 
 # Set Streamlit page layout
-st.set_page_config(page_title='Web Log Analysis App', layout='centered', page_icon=":fax:",)
+st.set_page_config(page_title='Web Log Analysis App', layout='wide', page_icon=":fax:",)
 
 # Function to style text
 def styled_text(text, font_size=18, color='black', weight='normal', align='left'):
