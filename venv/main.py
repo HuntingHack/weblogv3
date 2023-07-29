@@ -80,16 +80,16 @@ if (button1 == 'Agree'):
         with col2:
             st.write(colored_box("Unique URLs:", str(unique_urls), 'green'), unsafe_allow_html=True)
         with col3:
-            st.write(colored_box("Total Requests:", str(total_requests), 'yellow'), unsafe_allow_html=True)
+            st.write(colored_box("Total Requests:", str(total_requests), 'orange'), unsafe_allow_html=True)
         with col4:
             st.write(colored_box("Unique Vistors:", str(unique_visitors), 'red'), unsafe_allow_html=True)
             
         st.subheader("Additional Informations:")
     
-        st.write(colored_box("Status Code Counts:", "", 'lightpink'), unsafe_allow_html=True)
+        st.write(colored_box("Status Code Counts:", "", 'lightgreen'), unsafe_allow_html=True)
         st.table(status_counts)
 
-        st.write(colored_box("Page Views:", "", 'lightpink'), unsafe_allow_html=True)
+        st.write(colored_box("Page Views:", "", 'lightgreen'), unsafe_allow_html=True)
         st.table(page_views.head(20))
 
         # Data Visualization
