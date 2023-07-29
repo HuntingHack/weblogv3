@@ -60,8 +60,6 @@ if (button1 == 'Agree'):
 
         page_views = log_data['URL'].value_counts()  # Count of page views for each URL
 
-        
-
         # Perform analysis based on available columns
         unique_ips = log_data['IP'].nunique()  # Count the number of unique IP addresses
         unique_urls = log_data['URL'].nunique()  # Count the number of unique URLs
@@ -78,26 +76,25 @@ if (button1 == 'Agree'):
 
         col1, col2, col3,col4 = st.columns(4)
         with col1:
-            st.write(colored_box("Unique IP Adds:", str(unique_ips), 'lightblue'), unsafe_allow_html=True)
+            st.write(colored_box("Unique IP Adds:", str(unique_ips), 'blue'), unsafe_allow_html=True)
         with col2:
-            st.write(colored_box("Unique URLs:", str(unique_urls), 'lightgreen'), unsafe_allow_html=True)
+            st.write(colored_box("Unique URLs:", str(unique_urls), 'green'), unsafe_allow_html=True)
         with col3:
-            st.write(colored_box("Total Requests:", str(total_requests), 'lightyellow'), unsafe_allow_html=True)
+            st.write(colored_box("Total Requests:", str(total_requests), 'yellow'), unsafe_allow_html=True)
         with col4:
-            st.write(colored_box("Unique Vistors:", str(unique_visitors), 'lightpink'), unsafe_allow_html=True)
+            st.write(colored_box("Unique Vistors:", str(unique_visitors), 'red'), unsafe_allow_html=True)
             
         st.subheader("Additional Informations:")
-        st.write(styled_text("Analysis Results:", font_size=24, weight='bold', color='white', align='center'), unsafe_allow_html=True)
-
-        st.write(colored_box("Status Code Counts:", "", 'lightcoral'), unsafe_allow_html=True)
+    
+        st.write(colored_box("Status Code Counts:", "", 'lightpink'), unsafe_allow_html=True)
         st.table(status_counts)
 
-        st.write(colored_box("Page Views:", "", 'lightcoral'), unsafe_allow_html=True)
+        st.write(colored_box("Page Views:", "", 'lightpink'), unsafe_allow_html=True)
         st.table(page_views.head(20))
 
         # Data Visualization
         st.header('Data Visualization:')
-        st.subheader("You may see the Page Views frequency:")
+        st.subheader("Page Views Frequency:")
         fig = px.line(page_views, title='Page Views')
         st.plotly_chart(fig)
 
@@ -112,14 +109,12 @@ if (button1 == 'Agree'):
         plt.title('Web Log Data')
         plt.show()   
 
-
         # Step 3: Make the Time Series Stationary
         # Apply differencing to remove trend and seasonality
         differenced_data = target_variable.diff().dropna()
 
-        # ... Rest of the code remains unchanged ...
-        # Step 4: Determine ARIMA Parameters
-      # Plot the autocorrelation and partial autocorrelation functions
+        # Step 4: Determining ARIMA Parameters (For DEV use ONLY)
+        # Plot the autocorrelation and partial autocorrelation functions
         fig, ax = plt.subplots(figsize=(12, 6))
         plot_acf(differenced_data, ax=ax, lags=30)
         plt.xlabel('Lags')
@@ -142,8 +137,7 @@ if (button1 == 'Agree'):
 
         # Step 6: Fit the ARIMA Model
 
-
-        order = (2, 3, 1)  # Example order, replace with the appropriate values
+        order = (2, 3, 1)
         model = ARIMA(train_data, order=order)
         model_fit = model.fit()
         # Step 8: Evaluate the Model
@@ -156,7 +150,7 @@ if (button1 == 'Agree'):
 
         # Step 9: Forecast with the Model
 
-        st.subheader("Let's do Forecasting:")
+        st.subheader("Forecasting:")
 
         inpu2 = st.text_input("Enter the required number of predictions:")
 
@@ -165,7 +159,6 @@ if (button1 == 'Agree'):
 
             future_predictions = model_fit.forecast(steps=int(pred_no))  # Example: Generate 10 future predictions
             st.subheader('Predictions:')
-            st.success(future_predictions)
 
             # Step 5: Create a Line Plot with Forecasted Predictions
             fig = go.Figure()
@@ -195,9 +188,6 @@ if (button1 == 'Agree'):
             st.plotly_chart(fig)
 
             st.write("In conclusion, the Web Log Analysis App offers an invaluable resource for website owners and administrators to delve into their web server logs and extract meaningful insights. By harnessing data-driven decisions derived from this analysis, website owners can effectively optimize their online platforms, elevate user experiences, and bolster the overall security of their websites. The app's intuitive interface and powerful visualizations enable users to effortlessly identify patterns, track trends, and make informed decisions to enhance the performance and user engagement of their web presence. With the Web Log Analysis App at their disposal, website administrators are empowered to take their online ventures to new heights of success and efficiency.")
-
-    
-
           
     else:
         st.warning('Please upload a file to proceed.')
