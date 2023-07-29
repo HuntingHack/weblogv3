@@ -3,4 +3,4 @@ streamlit
 scikit-metrics
 matplotlib
 plotly
-pip install "trubrics[streamlit]"
+streamlit-survey
