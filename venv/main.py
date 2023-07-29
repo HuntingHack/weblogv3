@@ -192,17 +192,17 @@ if (button1 == 'Agree'):
 
             
 
-            collector = FeedbackCollector(
-                component_name="Feedback",
-                email=st.secrets["TRUBRICS_EMAIL"], 
-                password=st.secrets["TRUBRICS_PASSWORD"], 
-            )
+        collector = FeedbackCollector(
+            component_name="Feedback",
+            email=st.secrets["TRUBRICS_EMAIL"], 
+            password=st.secrets["TRUBRICS_PASSWORD"], 
+        )
 
-            collector.st_feedback(
-                feedback_type="faces",
-                model="your_model_name",
-                open_feedback_label="Please let us know about your suggestions!",
-            )
+        collector.st_feedback(
+            feedback_type="faces",
+            model="your_model_name",
+            open_feedback_label="Please let us know about your suggestions!",
+        )
           
     else:
         st.warning('Please upload a file to proceed.')
