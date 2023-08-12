@@ -6,3 +6,4 @@ plotly
 trubrics
 openai
 scikit-learn==1.1.0
+streamlit_feedback
