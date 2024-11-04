@@ -113,7 +113,7 @@ if (button1 == 'Agree'):
 
         # Step 3: Make the Time Series Stationary
         # Apply differencing to remove trend and seasonality
-        differenced_data = target_variable.diff().dropna()
+        #differenced_data = target_variable.diff().dropna()
 
         # Step 4: Determining ARIMA Parameters (For DEV use ONLY)
         # Plot the autocorrelation and partial autocorrelation functions
@@ -135,8 +135,8 @@ if (button1 == 'Agree'):
         # Determine the order (p, d, q) of the ARIMA model based on the plots and ADF test
 
         # Step 5: Split the Data
-        train_data = differenced_data[:-30]  # Use all but the last 30 data points for training
-        test_data = differenced_data[-30:]  # Use the last 30 data points for testing
+        train_data = differenced_data[:-100]  # Use all but the last 100 data points for training
+        test_data = differenced_data[-100:]  # Use the last 100 data points for testing
 
         # Step 6: Fit the ARIMA Model
 
@@ -160,7 +160,7 @@ if (button1 == 'Agree'):
         if inpu2:
             pred_no = inpu2.title()
 
-            future_predictions = model_fit.forecast(steps=int(pred_no))  # Example: Generate 10 future predictions
+            future_predictions = model_fit.forecast(steps=int(pred_no))
             st.subheader('Predictions:')
 
             # Step 5: Create a Line Plot with Forecasted Predictions
