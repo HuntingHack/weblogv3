@@ -135,8 +135,8 @@ if (button1 == 'Agree'):
         # Determine the order (p, d, q) of the ARIMA model based on the plots and ADF test
 
         # Step 5: Split the Data
-        train_data = differenced_data[:-100]  # Use all but the last 100 data points for training
-        test_data = differenced_data[-100:]  # Use the last 100 data points for testing
+        train_data = target_variable[:-100]  # Use all but the last 100 data points for training
+        test_data = target_variable[-100:]  # Use the last 100 data points for testing
 
         # Step 6: Fit the ARIMA Model
 
