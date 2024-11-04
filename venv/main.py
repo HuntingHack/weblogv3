@@ -113,7 +113,7 @@ if (button1 == 'Agree'):
 
         # Step 3: Make the Time Series Stationary
         # Apply differencing to remove trend and seasonality
-        #differenced_data = target_variable.diff().dropna()
+        differenced_data = target_variable.diff().dropna()
 
         # Step 4: Determining ARIMA Parameters (For DEV use ONLY)
         # Plot the autocorrelation and partial autocorrelation functions
