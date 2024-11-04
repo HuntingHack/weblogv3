@@ -1,7 +1,6 @@
 statsmodels
 streamlit
 scikit-metrics
-sklearn.metrics
 matplotlib
 plotly
 trubrics
