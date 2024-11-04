@@ -1,6 +1,6 @@
 statsmodels
 streamlit
-scikit-metrics==0.18.2
+scikit-metrics==0.20
 matplotlib
 plotly
 trubrics
