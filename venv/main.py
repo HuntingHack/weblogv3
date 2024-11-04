@@ -117,25 +117,20 @@ if (button1 == 'Agree'):
 
         # Step 4: Determining ARIMA Parameters (For DEV use ONLY)
         # Plot the autocorrelation and partial autocorrelation functions
-        if len(differenced_data) < 30:
-            print("Warning: Not enough data for 30 lags, adjusting to available data length.")
-            lags = max(1, len(differenced_data) - 1)  # Minimum lags of 1
-        else:
-            lags = 30
 
-        fig, ax = plt.subplots(figsize=(12, 6))
-        plot_acf(differenced_data, ax=ax, lags=lags)
-        plt.xlabel('Lags')
-        plt.ylabel('Autocorrelation')
-        plt.title('Autocorrelation Function')
-        plt.show()
+        #fig, ax = plt.subplots(figsize=(12, 6))
+        #plot_acf(differenced_data, ax=ax, lags=lags)
+        #plt.xlabel('Lags')
+        #plt.ylabel('Autocorrelation')
+        #plt.title('Autocorrelation Function')
+        #plt.show()
 
-        fig, ax = plt.subplots(figsize=(12, 6))
-        plot_pacf(differenced_data, ax=ax, lags=25)
-        plt.xlabel('Lags')
-        plt.ylabel('Partial Autocorrelation')
-        plt.title('Partial Autocorrelation Function')
-        plt.show()
+        #fig, ax = plt.subplots(figsize=(12, 6))
+        #plot_pacf(differenced_data, ax=ax, lags=25)
+        #plt.xlabel('Lags')
+        #plt.ylabel('Partial Autocorrelation')
+        #plt.title('Partial Autocorrelation Function')
+        #plt.show()
 
         # Determine the order (p, d, q) of the ARIMA model based on the plots and ADF test
 
