@@ -191,20 +191,6 @@ if (button1 == 'Agree'):
             st.plotly_chart(fig)
 
             st.write("In conclusion, the Web Log Analysis App offers an invaluable resource for website owners and administrators to delve into their web server logs and extract meaningful insights. By harnessing data-driven decisions derived from this analysis, website owners can effectively optimize their online platforms, elevate user experiences, and bolster the overall security of their websites. The app's intuitive interface and powerful visualizations enable users to effortlessly identify patterns, track trends, and make informed decisions to enhance the performance and user engagement of their web presence. With the Web Log Analysis App at their disposal, website administrators are empowered to take their online ventures to new heights of success and efficiency.")
-
-            
-        st.subheader("Feedback:")
-        collector = FeedbackCollector(
-            component_name="feedback",
-            email=st.secrets["TRUBRICS_EMAIL"], 
-            password=st.secrets["TRUBRICS_PASSWORD"], 
-        )
-
-        collector.st_feedback(
-            feedback_type="faces",
-            model="your_model_name",
-            open_feedback_label="Please let us know about your suggestions!",
-        )
           
     else:
         st.warning('Please upload a file to proceed.')
