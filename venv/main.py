@@ -132,8 +132,8 @@ if (button1 == 'Agree'):
         # Determine the order (p, d, q) of the ARIMA model based on the plots and ADF test
 
         #Split the Data
-        train_data = differenced_data[:-30]
-        test_data = differenced_data[-30:]
+        train_data = differenced_data[:-100]
+        test_data = differenced_data[-100:]
 
         #Fit the ARIMA Model
 
