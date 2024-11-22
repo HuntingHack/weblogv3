@@ -142,8 +142,8 @@ if (button1 == 'Agree'):
         #Evaluate the Model
         #predictions = model.forecast(steps=len(test_data))
         predictions = model.predict(start=train_data.shape[0],end=(train_data.shape[0]+test_data.shape[0]-1), dynamic=False)
-        predictions = predictions.reset_index(drop=True)
-        predictions.index = test_data.index
+        #predictions = predictions.reset_index(drop=True)
+        #predictions.index = test_data.index
         mse = mean_squared_error(test_data, predictions)
         rmse = np.sqrt(mse)
         mae = mean_absolute_error(test_data, predictions)
