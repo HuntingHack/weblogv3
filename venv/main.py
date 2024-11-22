@@ -63,7 +63,7 @@ if (button1 == 'Agree'):
         page_views = log_data['URL'].value_counts()  # Count of page views for each URL
         unique_ips = log_data['IP'].nunique()  # Count the number of unique IP addresses
         unique_urls = log_data['URL'].nunique()  # Count the number of unique URLs
-        status_counts = log_data['Staus'].value_counts()  # Count the occurrences of each status code
+        status_counts = log_data['Status'].value_counts()  # Count the occurrences of each status code
         # Perform exploratory analysis
         total_requests = len(log_data)  # Total number of requests
         unique_visitors = log_data['IP'].nunique()  # Number of unique IP addresses
