@@ -61,8 +61,6 @@ if (button1 == 'Agree'):
         log_data['URL'] = log_data['URL'].str.extract(r'(\S+)\sHTTP/1\.1')
 
         page_views = log_data['URL'].value_counts()  # Count of page views for each URL
-
-        # Perform analysis based on available columns
         unique_ips = log_data['IP'].nunique()  # Count the number of unique IP addresses
         unique_urls = log_data['URL'].nunique()  # Count the number of unique URLs
         status_counts = log_data['Staus'].value_counts()  # Count the occurrences of each status code
@@ -111,11 +109,10 @@ if (button1 == 'Agree'):
         plt.title('Web Log Data')
         plt.show()   
 
-        # Step 3: Make the Time Series Stationary
         # Apply differencing to remove trend and seasonality
         differenced_data = target_variable.diff().dropna()
 
-        # Step 4: Determining ARIMA Parameters (For DEV use ONLY)
+        # Determining ARIMA Parameters (For DEV use ONLY)
         # Plot the autocorrelation and partial autocorrelation functions
 
         #fig, ax = plt.subplots(figsize=(12, 6))
@@ -134,24 +131,24 @@ if (button1 == 'Agree'):
 
         # Determine the order (p, d, q) of the ARIMA model based on the plots and ADF test
 
-        # Step 5: Split the Data
-        train_data = differenced_data[:-100]  # Use all but the last 100 data points for training
-        test_data = differenced_data[-100:]  # Use the last 100 data points for testing
+        #Split the Data
+        train_data = differenced_data[:-100]
+        test_data = differenced_data[-100:]
 
-        # Step 6: Fit the ARIMA Model
+        #Fit the ARIMA Model
 
         order = (2, 3, 1)
         model = ARIMA(train_data, order=order)
         model_fit = model.fit()
-        # Step 8: Evaluate the Model
+        #Evaluate the Model
         predictions = model_fit.forecast(steps=len(test_data))
         mse = mean_squared_error(test_data, predictions)
         rmse = np.sqrt(mse)
         mae = mean_absolute_error(test_data, predictions)
-        print(f"RMSE: {rmse:.2f}")
-        print(f"MAE: {mae:.2f}")
+        st.write(f"RMSE: {rmse:.2f}")
+        st.write(f"MAE: {mae:.2f}")
 
-        # Step 9: Forecast with the Model
+        #Forecast with the Model
 
         st.subheader("Forecasting:")
 
