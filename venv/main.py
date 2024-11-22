@@ -138,10 +138,11 @@ if (button1 == 'Agree'):
         #Fit the ARIMA Model
 
         order = (2, 3, 1)
-        model = ARIMA(train_data, order=order)
-        model_fit = model.fit()
+        model = ARIMA(train_data, order=order).fit()
         #Evaluate the Model
-        predictions = model_fit.forecast(steps=len(test_data))
+        predictions = model.forecast(steps=len(test_data))
+        predictions = predictions.reset_index(drop=True)
+        predictions.index = test_data.index
         mse = mean_squared_error(test_data, predictions)
         rmse = np.sqrt(mse)
         mae = mean_absolute_error(test_data, predictions)
@@ -157,7 +158,7 @@ if (button1 == 'Agree'):
         if inpu2:
             pred_no = inpu2.title()
 
-            future_predictions = model_fit.forecast(steps=int(pred_no))
+            future_predictions = model.forecast(steps=int(pred_no))
             st.subheader('Predictions:')
 
             # Step 5: Create a Line Plot with Forecasted Predictions
