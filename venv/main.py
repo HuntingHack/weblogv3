@@ -140,10 +140,9 @@ if (button1 == 'Agree'):
         order = (2, 3, 1)
         model = ARIMA(train_data, order=order).fit()
         #Evaluate the Model
-        #predictions = model.forecast(steps=len(test_data))
-        predictions = model.predict(start=train_data.shape[0],end=(train_data.shape[0]+test_data.shape[0]-1), dynamic=False)
-        #predictions = predictions.reset_index(drop=True)
-        #predictions.index = test_data.index
+        predictions = model.forecast(30)
+        predictions = predictions.reset_index(drop=True)
+        predictions.index = test_data.index
         mse = mean_squared_error(test_data, predictions)
         rmse = np.sqrt(mse)
         mae = mean_absolute_error(test_data, predictions)
