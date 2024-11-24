@@ -110,7 +110,7 @@ if (button1 == 'Agree'):
         plt.show()   
 
         # Apply differencing to remove trend and seasonality
-        differenced_data = target_variable.diff().dropna()
+        differenced_data = target_variable    
 
         # Determining ARIMA Parameters (For DEV use ONLY)
         # Plot the autocorrelation and partial autocorrelation functions
@@ -137,7 +137,7 @@ if (button1 == 'Agree'):
 
         #Fit the ARIMA Model
 
-        order = (3, 0, 2)
+        order = (2, 0, 2)
         model = ARIMA(train_data, order=order).fit()
         #Evaluate the Model
         predictions = model.forecast(30)
