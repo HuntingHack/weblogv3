@@ -137,7 +137,7 @@ if (button1 == 'Agree'):
 
         #Fit the ARIMA Model
 
-        order = (12, 1, 13)
+        order = (12, 2, 13)
         model = ARIMA(train_data, order=order).fit()
         #Evaluate the Model
         predictions = model.forecast(30)
