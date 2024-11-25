@@ -29,7 +29,7 @@ def expandable_section(title, content):
 
 # Code for website design
 st.title('Web Log Analysis App')
-st.subheader('By Siddharth Madhavan')
+st.subheader('V 4.01')
 
 # Disclaimer
 with st.expander('Disclaimer', expanded=True):
